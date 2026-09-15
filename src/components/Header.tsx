@@ -39,6 +39,7 @@ export function Header({ locale, dict }: HeaderProps) {
   ];
 
   return (
+    <>
     <header className="sticky top-0 z-40 border-b border-navy/10 bg-white/95 backdrop-blur">
       <div className="shell flex h-20 items-center justify-between gap-4">
         <Link href={path(locale, "home")} className="shrink-0">
@@ -81,42 +82,43 @@ export function Header({ locale, dict }: HeaderProps) {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-navy/10 bg-white lg:hidden"
-        >
-          <nav className="shell flex flex-col gap-1 py-6" aria-label={dict.common.menu}>
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  onClick={() => setOpen(false)}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium ${
-                    isActive ? "bg-bone text-leaf" : "text-navy-deep"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <div className="mt-3 flex items-center gap-3 px-3">
-              <LanguageSwitcher locale={locale} label={dict.languageSwitcherLabel} align="left" />
-            </div>
-            <Link
-              href={path(locale, "contact")}
-              onClick={() => setOpen(false)}
-              className="btn-primary mx-3 mt-3 justify-center"
-            >
-              {dict.nav.ctaContact}
-            </Link>
-          </nav>
-        </div>
-      ) : null}
     </header>
+
+    {open ? (
+      <div
+        id="mobile-menu"
+        className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-navy/10 bg-white lg:hidden"
+      >
+        <nav className="shell flex flex-col gap-1 py-6" aria-label={dict.common.menu}>
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                onClick={() => setOpen(false)}
+                className={`rounded-lg px-3 py-2 text-sm font-medium ${
+                  isActive ? "bg-bone text-leaf" : "text-navy-deep"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <div className="mt-3 flex items-center gap-3 px-3">
+            <LanguageSwitcher locale={locale} label={dict.languageSwitcherLabel} align="left" />
+          </div>
+          <Link
+            href={path(locale, "contact")}
+            onClick={() => setOpen(false)}
+            className="btn-primary mx-3 mt-3 justify-center"
+          >
+            {dict.nav.ctaContact}
+          </Link>
+        </nav>
+      </div>
+    ) : null}
+    </>
   );
 }
