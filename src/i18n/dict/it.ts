@@ -1,4 +1,4 @@
-import type { Dictionary } from "./de";
+import type { Dictionary, FeatureItem } from "./de";
 
 const it: Dictionary = {
   meta: {
@@ -10,6 +10,7 @@ const it: Dictionary = {
     home: "Home",
     about: "Chi siamo",
     products: "Prodotti",
+    bread: "Tabuny",
     supplyChain: "Catena di fornitura",
     contact: "Contatto",
     ctaContact: "Contattaci",
@@ -25,6 +26,7 @@ const it: Dictionary = {
   footer: {
     tagline: "Verdure surgelate dall'Egitto, distribuite in modo affidabile per la Svizzera.",
     originLine: "Origine dei prodotti: Egitto",
+    navHeading: "Navigazione",
     contactHeading: "Contatto",
     addressHeading: "Indirizzo",
     legalHeading: "Note legali",
@@ -177,10 +179,90 @@ const it: Dictionary = {
         text: "Che si tratti di una grande cucina o del bancone — i prodotti si pianificano senza complicazioni.",
       },
     ],
+    breadTeaser: {
+      heading: "Tabuny",
+      text: "Pane piatto tradizionale a cartone — la nostra seconda linea di prodotti per ristorazione e commercio.",
+      cta: "Scopri di più",
+    },
     contactCta: {
       eyebrow: "Interessati?",
       heading: "Richiedete formati e disponibilità",
       lead: "Discutiamo direttamente con voi formati, quantità di consegna e tempistiche.",
+      ctaPrimary: "Chiama ora",
+      ctaSecondary: "Invia una richiesta",
+    },
+  },
+  breadPage: {
+    hero: {
+      eyebrow: "Seconda linea di prodotti",
+      heading: "Tabuny",
+      lead: "Pane piatto tradizionale, fornito a cartone a ristoranti, take-away e rivenditori in Svizzera.",
+      imageAlt: "Pane piatto appena sfornato su una griglia",
+    },
+    story: {
+      eyebrow: "Origine",
+      heading: "Dal nostro panificio",
+      text: "Tabuny è più di semplice pane: un'arte fatta di tempo, dei migliori ingredienti e rispetto per la tradizione. Come i nostri antenati, lo cuociamo in modo classico, a fuoco vivo in un forno di terracotta, nel nostro panificio a Ganterschwil. Tramite TAULA, lo offriamo anche, accanto alla nostra gamma di verdure, ad attività di ristorazione e commercio che necessitano regolarmente di quantità maggiori.",
+    },
+    philosophy: {
+      eyebrow: "I nostri principi",
+      heading: "Filosofia & qualità",
+      items: [
+        {
+          title: "Nessun compromesso sugli ingredienti",
+          text: "Utilizziamo esclusivamente materie prime di alta qualità e sappiamo esattamente da dove provengono.",
+        },
+        {
+          title: "Il tempo è un ingrediente",
+          text: "Un buon impasto ha bisogno di riposo — gli diamo il tempo di sviluppare tutto il suo aroma.",
+        },
+        {
+          title: "Sostenibilità",
+          text: "Dalla scelta dei nostri partner alla logistica, agiamo in modo responsabile.",
+        },
+        {
+          title: "La tradizione incontra la modernità",
+          text: "Tecniche di panificazione secolari unite a standard moderni per un gusto autentico.",
+        },
+        {
+          title: "Affidabilità",
+          text: "Puntualità e spirito di collaborazione — a ogni consegna.",
+        },
+      ] as FeatureItem[],
+    },
+    promise: {
+      eyebrow: "La nostra promessa",
+      heading: "Ogni pane che esce dal nostro panificio è il risultato di passione, pazienza e cura per i dettagli.",
+      lead: "Siamo orgogliosi di far parte del vostro momento di piacere.",
+      cta: "Contattaci",
+    },
+    benefits: [
+      {
+        title: "Ricetta tradizionale",
+        text: "Pane piatto classico, cotto secondo una tradizione tramandata.",
+      },
+      {
+        title: "Confezionato per l'attività",
+        text: "Consegnato a cartone con più confezioni all'interno, pratico per cucina o banco.",
+      },
+      {
+        title: "Gestione personale",
+        text: "Discutiamo direttamente con voi quantità, data di consegna e condizioni di pagamento.",
+      },
+    ] as FeatureItem[],
+    orderCard: {
+      heading: "Richiesta cartone",
+      unitLabel: "1 cartone = 24 confezioni",
+      cartonsLabel: "Numero di cartoni",
+      noteLabel: "Nota (facoltativa)",
+      notePlaceholder: "es. data di consegna preferita",
+      submitCta: "Invia richiesta",
+      helperText: "Questa richiesta non è vincolante. Vi contatteremo personalmente per confermare quantità, tempistiche e condizioni.",
+    },
+    contactCta: {
+      eyebrow: "Interessati?",
+      heading: "Parliamo delle vostre esigenze",
+      lead: "Chiamateci o inviateci una richiesta — vi risponderemo personalmente.",
       ctaPrimary: "Chiama ora",
       ctaSecondary: "Invia una richiesta",
     },
@@ -241,6 +323,7 @@ const it: Dictionary = {
     phoneLabel: "Telefono",
     emailLabel: "E-mail",
     addressLabel: "Indirizzo",
+    followUsHeading: "Seguiteci",
     form: {
       heading: "Invia un messaggio",
       name: "Nome",
@@ -248,8 +331,10 @@ const it: Dictionary = {
       email: "E-mail",
       phone: "Telefono",
       interest: "Interesse",
+      interestHelp: "Selezionate il prodotto su cui desiderate informazioni — vi risponderemo con i dettagli corrispondenti.",
       message: "Messaggio",
       interestGeneral: "Richiesta generale",
+      interestBread: "Tabuny",
       submit: "Invia messaggio",
       submitting: "Invio in corso…",
       successTitle: "Grazie per il vostro messaggio",

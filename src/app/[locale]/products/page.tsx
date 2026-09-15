@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2, PackageCheck, Layers } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, PackageCheck, Layers, ArrowRight } from "lucide-react";
 import { defaultLocale, isLocale, path, buildLanguageAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dict";
 import { products } from "@/data/products";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
-import { site } from "@/data/site";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -77,6 +77,25 @@ export default async function ProductsPage({ params }: PageProps) {
               closeLabel={dict.common.close}
             />
           ))}
+          <Link href={path(locale, "bread")} className="card flex flex-col overflow-hidden p-0">
+            <div className="relative aspect-[4/3] w-full bg-bone">
+              <Image
+                src="/images/prod-bread.jpg"
+                alt={dict.breadPage.hero.imageAlt}
+                fill
+                sizes="(min-width: 768px) 400px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-1 flex-col gap-3 p-6">
+              <h3 className="text-xl font-bold text-navy-deep">{dict.productsPage.breadTeaser.heading}</h3>
+              <p className="flex-1 text-sm text-navy-deep/70">{dict.productsPage.breadTeaser.text}</p>
+              <span className="btn-ghost mt-2 inline-flex w-fit items-center gap-2">
+                {dict.productsPage.breadTeaser.cta}
+                <ArrowRight size={16} aria-hidden="true" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -105,10 +124,7 @@ export default async function ProductsPage({ params }: PageProps) {
             lead={dict.productsPage.contactCta.lead}
           />
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={site.phoneHref} className="btn-primary">
-              {dict.productsPage.contactCta.ctaPrimary}
-            </a>
-            <a href={path(locale, "contact")} className="btn-ghost bg-transparent text-white hover:bg-white/10">
+            <a href={path(locale, "contact")} className="btn-primary">
               {dict.productsPage.contactCta.ctaSecondary}
             </a>
           </div>

@@ -4,6 +4,8 @@
 
 TAULA is a Swiss importer and distributor of frozen vegetables sourced from Egyptian producers. Customers are restaurants, retailers, wholesalers and food service businesses in Switzerland. This is a **catalogue and trust-building site with no e-commerce**: no cart, no prices, no order flow, no catalogue PDF. Every call to action ends in a phone call or an email. Never add ordering, pricing or checkout — their absence is deliberate.
 
+TAULA also carries a second product line: traditionally baked flatbread, produced in the company's own bakery in Ganterschwil (`/bread` route, `Dictionary.breadPage`). This absorbed a formerly separate site/brand ("Tabuny") — that name has been deliberately dropped everywhere; the bread content is presented purely as a TAULA product line, not a partner or sub-brand. The bread page's "carton inquiry" card (`BreadOrderCard`) asks for a quantity and an optional note, never a price, and redirects to the contact form to submit — it is an inquiry hand-off, not a cart or checkout, consistent with the no-e-commerce rule above. Do not reintroduce pricing (CHF amounts) or a real order/checkout flow for bread without asking the user first.
+
 ## Non-negotiable copy rules (legal — must survive every edit and translation)
 
 1. **No Swiss-origin claims.** The produce is grown in Egypt. Never write "Schweizer Qualität", "aus der Schweiz", "Swiss quality", and never render a Swiss cross. Use "für die Schweiz" / "in der Schweiz" (for/in Switzerland) — describes who is served, which is true. Institutional references like "Schweizer Zoll" (Swiss Customs) are fine — they're not origin/quality claims.
@@ -32,7 +34,7 @@ The eyebrow + heading + short green rule pattern (`SectionHeading` component) is
 
 ## Internationalisation
 
-Locales `['de','en','fr','it']`, `de` is default, config in `src/i18n/config.ts` with a `path(locale, route)` helper and `isLocale()` type guard. Same route segments in every locale: `about`, `products`, `supply-chain`, `contact`, `imprint`. Root layout lives at `src/app/[locale]/layout.tsx` — there is **no** `src/app/layout.tsx`.
+Locales `['de','en','fr','it']`, `de` is default, config in `src/i18n/config.ts` with a `path(locale, route)` helper and `isLocale()` type guard. Same route segments in every locale: `about`, `products`, `bread`, `supply-chain`, `contact`, `imprint`. Root layout lives at `src/app/[locale]/layout.tsx` — there is **no** `src/app/layout.tsx`.
 
 `src/middleware.ts` redirects any locale-less path to one, reading `Accept-Language`, falling back to `de`. **Gotcha**: with a `src/` directory, Next.js requires `middleware.ts` inside `src/`, not at the true project root — placing it beside `package.json` causes Next to silently never load it (no error, no log line, it just never runs). Matcher includes `/` explicitly plus a catch-all excluding `api`, `_next`, `images`, and any dotted filename (some Next versions don't match bare `/` from the catch-all pattern alone).
 
@@ -42,7 +44,7 @@ Dictionaries in `src/i18n/dict/`: `de.ts` is the source of truth and exports its
 
 `src/data/site.ts` — single source for company details. Phone, address and UID are placeholders (`placeholders: {...}` flags); `hasPlaceholders` is exported and gates the amber warning band in the footer.
 
-`src/data/products.ts` — seven products: `molokhia` (`featured: true`, leads, double-width card), `okra`, `peas`, `potatoes`, `mixed`, `spinach`, `beans`. This file holds structure only (slug, featured, image paths); names/descriptions live in the dictionaries keyed by slug under `Dictionary.products`.
+`src/data/products.ts` — seven products: `molokhia` (`featured: true`, leads, double-width card), `okra`, `peas`, `potatoes`, `mixed`, `spinach`, `beans`. This file holds structure only (slug, featured, image paths); names/descriptions live in the dictionaries keyed by slug under `Dictionary.products`. Bread is deliberately **not** in this file/`ProductSlug` — `ProductCard` only knows how to open a modal, never navigate, so bread lives as its own route (`src/app/[locale]/bread/page.tsx`) with its own dictionary section (`Dictionary.breadPage`) instead. The products page links to it via a plain `<Link>` card styled like `ProductCard` but not using the component.
 
 ## Build state
 
@@ -58,7 +60,8 @@ Dictionaries in `src/i18n/dict/`: `de.ts` is the source of truth and exports its
 - [x] Contact API route (`src/app/api/contact/route.ts`)
 - [x] Placeholder logo SVGs, image-reference audit (no static image imports anywhere — all `<Image>` use string `src`)
 - [x] `npm install` / `npm run build` clean (24 locale×route pages prerendered), dev server verified
+- [x] Bread merge: `/bread` route + `BreadOrderCard` (inquiry-only, no pricing) + `Dictionary.breadPage` in all 4 locales + products-page teaser card linking to it + nav link in `Header`. Former Tabuny site/brand name fully dropped from copy. `npm run build` clean (32 locale×route pages prerendered).
 
-**Build is complete.** Remaining before going live: replace placeholder phone/address/UID in `src/data/site.ts`, add real photography to `public/images/`, and set real `RESEND_API_KEY`/`CONTACT_TO_EMAIL`/`CONTACT_FROM_EMAIL` env vars. Note: `next.config.js` sets `images.dangerouslyAllowSVG: true` so the two placeholder logo SVGs can be served through the Next.js image optimizer — this is safe since both SVGs are local, trusted, checked-in assets.
+**Build is complete.** `src/data/site.ts` now holds real phone, address and UID (`CHE-390.832.252`) — no more placeholders, so `hasPlaceholders` is `false`. Remaining before going live: add real photography for the still-missing spots in `public/images/`, set real `RESEND_API_KEY`/`CONTACT_TO_EMAIL`/`CONTACT_FROM_EMAIL` env vars, get real social profile URLs into `site.social.{instagram,facebook,tiktok}` (currently empty, icons already live in the footer and contact page), and — outside this codebase — decide what happens to the `tabuny-schweiz.ch` domain/hosting (e.g. DNS redirect to the new TAULA `/bread` page) once this ships. Note: `next.config.js` sets `images.dangerouslyAllowSVG: true` so the two placeholder logo SVGs can be served through the Next.js image optimizer — this is safe since both SVGs are local, trusted, checked-in assets.
 
 Update this checklist as work proceeds so future sessions know where the build stands.

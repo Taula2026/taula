@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { defaultLocale, isLocale, buildLanguageAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dict";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
+import { TikTokIcon } from "@/components/icons/TikTokIcon";
 import { site } from "@/data/site";
+
+// Real profile URLs pending — icons stay visible with placeholder links until then.
+const SOCIAL_LINKS = [
+  { name: "Instagram", hrefKey: "instagram", Icon: Instagram },
+  { name: "Facebook", hrefKey: "facebook", Icon: Facebook },
+  { name: "TikTok", hrefKey: "tiktok", Icon: TikTokIcon },
+] as const;
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -77,6 +85,24 @@ export default async function ContactPage({ params }: PageProps) {
                 </div>
               </li>
             </ul>
+
+            <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy-deep">
+              {dict.contactPage.followUsHeading}
+            </h3>
+            <div className="mt-4 flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ name, hrefKey, Icon }) => (
+                <a
+                  key={name}
+                  href={site.social[hrefKey] || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-navy/20 text-navy-deep transition-colors hover:border-leaf hover:text-leaf"
+                >
+                  <Icon size={16} aria-hidden={true} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

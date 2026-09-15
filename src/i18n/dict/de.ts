@@ -31,6 +31,7 @@ const de = {
     home: "Start",
     about: "Über uns",
     products: "Produkte",
+    bread: "Tabuny",
     supplyChain: "Lieferkette",
     contact: "Kontakt",
     ctaContact: "Kontakt aufnehmen",
@@ -46,6 +47,7 @@ const de = {
   footer: {
     tagline: "Tiefkühlgemüse aus Ägypten, zuverlässig verteilt für die Schweiz.",
     originLine: "Herkunft der Produkte: Ägypten",
+    navHeading: "Navigation",
     contactHeading: "Kontakt",
     addressHeading: "Adresse",
     legalHeading: "Rechtliches",
@@ -203,10 +205,90 @@ const de = {
         text: "Ob Grossküche oder Ladentheke — die Produkte lassen sich unkompliziert einplanen.",
       },
     ] as FeatureItem[],
+    breadTeaser: {
+      heading: "Tabuny",
+      text: "Traditionell gebackenes Fladenbrot im Karton — unsere zweite Produktlinie für Gastronomie und Handel.",
+      cta: "Mehr erfahren",
+    },
     contactCta: {
       eyebrow: "Interesse?",
       heading: "Fragen Sie Formate und Verfügbarkeit an",
       lead: "Formate, Liefermengen und Termine besprechen wir direkt mit Ihnen.",
+      ctaPrimary: "Jetzt anrufen",
+      ctaSecondary: "Anfrage senden",
+    },
+  },
+  breadPage: {
+    hero: {
+      eyebrow: "Zweite Produktlinie",
+      heading: "Tabuny",
+      lead: "Traditionell gebackenes Fladenbrot, im Karton für Restaurants, Take-aways und Wiederverkäufer in der Schweiz.",
+      imageAlt: "Frisch gebackenes Fladenbrot auf einem Gitter",
+    },
+    story: {
+      eyebrow: "Herkunft",
+      heading: "Aus unserer eigenen Bäckerei",
+      text: "Tabuny ist mehr als nur Brot: ein Stück Handwerk, das mit Zeit, besten Zutaten und Respekt vor der Tradition entsteht. Wie unsere Vorfahren backen wir es klassisch auf offenem Feuer im Tontopf-Ofen, in unserer eigenen Bäckerei in Ganterschwil. Über TAULA bieten wir es zusätzlich zu unserem Gemüsesortiment auch Gastronomie- und Handelsbetrieben an, die regelmässig grössere Mengen benötigen.",
+    },
+    philosophy: {
+      eyebrow: "Unsere Grundsätze",
+      heading: "Philosophie & Qualität",
+      items: [
+        {
+          title: "Keine Kompromisse bei den Zutaten",
+          text: "Wir verwenden ausschliesslich hochwertige Rohstoffe und wissen genau, woher sie stammen.",
+        },
+        {
+          title: "Zeit ist eine Zutat",
+          text: "Guter Teig braucht Ruhe — wir geben ihm die Zeit, sein volles Aroma zu entfalten.",
+        },
+        {
+          title: "Nachhaltigkeit",
+          text: "Von der Auswahl unserer Partner bis zur Logistik handeln wir verantwortungsbewusst.",
+        },
+        {
+          title: "Tradition trifft Moderne",
+          text: "Jahrhundertealte Backtechniken kombiniert mit modernen Standards für authentischen Geschmack.",
+        },
+        {
+          title: "Verlässlichkeit",
+          text: "Pünktlichkeit und partnerschaftliche Zusammenarbeit — mit jeder Lieferung.",
+        },
+      ] as FeatureItem[],
+    },
+    promise: {
+      eyebrow: "Unser Versprechen",
+      heading: "Jedes Brot, das unsere Backstube verlässt, ist das Ergebnis von Leidenschaft, Geduld und der Liebe zum Detail.",
+      lead: "Wir sind stolz darauf, Teil Ihres Genussmoments zu sein.",
+      cta: "Kontakt aufnehmen",
+    },
+    benefits: [
+      {
+        title: "Traditionelle Rezeptur",
+        text: "Klassisches Fladenbrot, gebacken nach überlieferter Tradition.",
+      },
+      {
+        title: "Verpackt für den Betrieb",
+        text: "Lieferung im Karton zu mehreren Packungen, praktisch für Küche oder Theke.",
+      },
+      {
+        title: "Persönliche Abwicklung",
+        text: "Menge, Liefertermin und Zahlungskonditionen besprechen wir direkt mit Ihnen.",
+      },
+    ] as FeatureItem[],
+    orderCard: {
+      heading: "Karton-Anfrage",
+      unitLabel: "1 Karton = 24 Packungen",
+      cartonsLabel: "Anzahl Kartons",
+      noteLabel: "Bemerkung (optional)",
+      notePlaceholder: "z. B. gewünschter Liefertermin",
+      submitCta: "Anfrage senden",
+      helperText: "Diese Anfrage ist unverbindlich. Wir melden uns persönlich zur Bestätigung von Menge, Termin und Konditionen.",
+    },
+    contactCta: {
+      eyebrow: "Interesse?",
+      heading: "Sprechen Sie mit uns über Ihren Bedarf",
+      lead: "Rufen Sie uns an oder senden Sie eine Anfrage — wir melden uns persönlich zurück.",
       ctaPrimary: "Jetzt anrufen",
       ctaSecondary: "Anfrage senden",
     },
@@ -267,6 +349,7 @@ const de = {
     phoneLabel: "Telefon",
     emailLabel: "E-Mail",
     addressLabel: "Adresse",
+    followUsHeading: "Folgen Sie uns",
     form: {
       heading: "Nachricht senden",
       name: "Name",
@@ -274,8 +357,10 @@ const de = {
       email: "E-Mail",
       phone: "Telefon",
       interest: "Interesse",
+      interestHelp: "Wählen Sie das Produkt, zu dem Sie Informationen wünschen — wir melden uns mit den passenden Angaben.",
       message: "Nachricht",
       interestGeneral: "Allgemeine Anfrage",
+      interestBread: "Tabuny",
       submit: "Nachricht senden",
       submitting: "Wird gesendet…",
       successTitle: "Danke für Ihre Nachricht",

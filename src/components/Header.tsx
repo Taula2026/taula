@@ -22,6 +22,7 @@ export function Header({ locale, dict }: HeaderProps) {
     { href: path(locale, "home"), label: dict.nav.home },
     { href: path(locale, "about"), label: dict.nav.about },
     { href: path(locale, "products"), label: dict.nav.products },
+    { href: path(locale, "bread"), label: dict.nav.bread },
     { href: path(locale, "supplyChain"), label: dict.nav.supplyChain },
     { href: path(locale, "contact"), label: dict.nav.contact },
   ];

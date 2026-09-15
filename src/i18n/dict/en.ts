@@ -1,4 +1,4 @@
-import type { Dictionary } from "./de";
+import type { Dictionary, FeatureItem } from "./de";
 
 const en: Dictionary = {
   meta: {
@@ -10,6 +10,7 @@ const en: Dictionary = {
     home: "Home",
     about: "About us",
     products: "Products",
+    bread: "Tabuny",
     supplyChain: "Supply chain",
     contact: "Contact",
     ctaContact: "Get in touch",
@@ -25,6 +26,7 @@ const en: Dictionary = {
   footer: {
     tagline: "Frozen vegetables from Egypt, reliably distributed for Switzerland.",
     originLine: "Origin of products: Egypt",
+    navHeading: "Navigation",
     contactHeading: "Contact",
     addressHeading: "Address",
     legalHeading: "Legal",
@@ -177,10 +179,90 @@ const en: Dictionary = {
         text: "Whether in a large kitchen or at the counter — the products are easy to plan with.",
       },
     ],
+    breadTeaser: {
+      heading: "Tabuny",
+      text: "Traditionally baked flatbread by the carton — our second product line for food service and retail.",
+      cta: "Learn more",
+    },
     contactCta: {
       eyebrow: "Interested?",
       heading: "Ask about formats and availability",
       lead: "We discuss formats, delivery quantities and timing directly with you.",
+      ctaPrimary: "Call now",
+      ctaSecondary: "Send an inquiry",
+    },
+  },
+  breadPage: {
+    hero: {
+      eyebrow: "Second product line",
+      heading: "Tabuny",
+      lead: "Traditionally baked flatbread, supplied by the carton to restaurants, take-aways and resellers in Switzerland.",
+      imageAlt: "Freshly baked flatbread on a cooling rack",
+    },
+    story: {
+      eyebrow: "Origin",
+      heading: "From our own bakery",
+      text: "Tabuny is more than bread: a piece of craftsmanship shaped by time, the best ingredients and respect for tradition. Like our ancestors, we bake it the classic way — over an open fire in a clay-pot oven — in our own bakery in Ganterschwil. Through TAULA, we also offer it alongside our vegetable range to food service and trade businesses that need larger quantities on a regular basis.",
+    },
+    philosophy: {
+      eyebrow: "Our principles",
+      heading: "Philosophy & quality",
+      items: [
+        {
+          title: "No compromises on ingredients",
+          text: "We use only high-quality raw materials and know exactly where they come from.",
+        },
+        {
+          title: "Time is an ingredient",
+          text: "Good dough needs rest — we give it the time to develop its full flavour.",
+        },
+        {
+          title: "Sustainability",
+          text: "From choosing our partners to our logistics, we act responsibly.",
+        },
+        {
+          title: "Tradition meets modern",
+          text: "Centuries-old baking techniques combined with modern standards for authentic flavour.",
+        },
+        {
+          title: "Reliability",
+          text: "Punctuality and a partnership approach — with every delivery.",
+        },
+      ] as FeatureItem[],
+    },
+    promise: {
+      eyebrow: "Our promise",
+      heading: "Every loaf that leaves our bakery is the result of passion, patience and love for detail.",
+      lead: "We're proud to be part of your moment of enjoyment.",
+      cta: "Get in touch",
+    },
+    benefits: [
+      {
+        title: "Traditional recipe",
+        text: "Classic flatbread, baked according to time-honoured tradition.",
+      },
+      {
+        title: "Packed for business use",
+        text: "Delivered by the carton with multiple packs inside, practical for kitchens or counters.",
+      },
+      {
+        title: "Handled personally",
+        text: "We discuss quantity, delivery date and payment terms directly with you.",
+      },
+    ] as FeatureItem[],
+    orderCard: {
+      heading: "Carton inquiry",
+      unitLabel: "1 carton = 24 packs",
+      cartonsLabel: "Number of cartons",
+      noteLabel: "Note (optional)",
+      notePlaceholder: "e.g. preferred delivery date",
+      submitCta: "Send inquiry",
+      helperText: "This inquiry is non-binding. We'll get in touch personally to confirm quantity, timing and terms.",
+    },
+    contactCta: {
+      eyebrow: "Interested?",
+      heading: "Talk to us about your needs",
+      lead: "Call us or send an inquiry — we'll get back to you personally.",
       ctaPrimary: "Call now",
       ctaSecondary: "Send an inquiry",
     },
@@ -241,6 +323,7 @@ const en: Dictionary = {
     phoneLabel: "Phone",
     emailLabel: "Email",
     addressLabel: "Address",
+    followUsHeading: "Follow us",
     form: {
       heading: "Send a message",
       name: "Name",
@@ -248,8 +331,10 @@ const en: Dictionary = {
       email: "Email",
       phone: "Phone",
       interest: "Interest",
+      interestHelp: "Select the product you'd like more information about — we'll get back to you with the details.",
       message: "Message",
       interestGeneral: "General inquiry",
+      interestBread: "Tabuny",
       submit: "Send message",
       submitting: "Sending…",
       successTitle: "Thank you for your message",

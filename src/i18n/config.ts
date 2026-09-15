@@ -8,6 +8,7 @@ export const ROUTE_SEGMENTS = {
   home: "",
   about: "about",
   products: "products",
+  bread: "bread",
   supplyChain: "supply-chain",
   contact: "contact",
   imprint: "imprint",

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { Suspense, useEffect, useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { PRODUCT_SLUGS, type ProductSlug } from "@/data/products";
 import type { Dictionary } from "@/i18n/dict";
 
@@ -8,7 +9,7 @@ interface ContactFormProps {
   dict: Dictionary;
 }
 
-type Interest = ProductSlug | "general";
+type Interest = ProductSlug | "general" | "bread";
 
 interface DraftState {
   name: string;
@@ -32,11 +33,26 @@ const STORAGE_KEY = "taula-contact-draft";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm({ dict }: ContactFormProps) {
+function ContactFormInner({ dict }: ContactFormProps) {
+  const searchParams = useSearchParams();
   const [draft, setDraft] = useState<DraftState>(EMPTY_DRAFT);
   const [status, setStatus] = useState<Status>("idle");
 
   useEffect(() => {
+    // URL params (from e.g. the bread order card) take priority over a saved draft,
+    // since they represent a fresh, intentional hand-off from another part of the site.
+    const interestParam = searchParams.get("interest");
+    const messageParam = searchParams.get("message");
+
+    if (interestParam || messageParam) {
+      setDraft((current) => ({
+        ...current,
+        interest: interestParam === "bread" ? "bread" : current.interest,
+        message: messageParam ?? current.message,
+      }));
+      return;
+    }
+
     const stored = window.localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
@@ -45,6 +61,7 @@ export function ContactForm({ dict }: ContactFormProps) {
         // ignore malformed draft
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -162,12 +179,14 @@ export function ContactForm({ dict }: ContactFormProps) {
             className="w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm focus-visible:border-leaf"
           >
             <option value="general">{form.interestGeneral}</option>
+            <option value="bread">{form.interestBread}</option>
             {PRODUCT_SLUGS.map((slug) => (
               <option key={slug} value={slug}>
                 {dict.products[slug].name}
               </option>
             ))}
           </select>
+          <p className="mt-1.5 text-xs text-navy-deep/60">{form.interestHelp}</p>
         </div>
 
         <div>
@@ -206,5 +225,15 @@ export function ContactForm({ dict }: ContactFormProps) {
         </div>
       </form>
     </div>
+  );
+}
+
+// useSearchParams requires a Suspense boundary in the App Router; this wrapper
+// keeps that detail contained here so every page using ContactForm stays simple.
+export function ContactForm({ dict }: ContactFormProps) {
+  return (
+    <Suspense fallback={<div className="card animate-pulse" aria-hidden="true" />}>
+      <ContactFormInner dict={dict} />
+    </Suspense>
   );
 }

@@ -1,4 +1,4 @@
-import type { Dictionary } from "./de";
+import type { Dictionary, FeatureItem } from "./de";
 
 const fr: Dictionary = {
   meta: {
@@ -10,6 +10,7 @@ const fr: Dictionary = {
     home: "Accueil",
     about: "À propos",
     products: "Produits",
+    bread: "Tabuny",
     supplyChain: "Chaîne d'approvisionnement",
     contact: "Contact",
     ctaContact: "Nous contacter",
@@ -25,6 +26,7 @@ const fr: Dictionary = {
   footer: {
     tagline: "Légumes surgelés d'Égypte, distribués de manière fiable pour la Suisse.",
     originLine: "Origine des produits : Égypte",
+    navHeading: "Navigation",
     contactHeading: "Contact",
     addressHeading: "Adresse",
     legalHeading: "Mentions légales",
@@ -177,10 +179,90 @@ const fr: Dictionary = {
         text: "Que ce soit en grande cuisine ou au comptoir — les produits s'intègrent facilement à la planification.",
       },
     ],
+    breadTeaser: {
+      heading: "Tabuny",
+      text: "Pain plat traditionnel au carton — notre deuxième ligne de produits pour la restauration et le commerce.",
+      cta: "En savoir plus",
+    },
     contactCta: {
       eyebrow: "Intéressé ?",
       heading: "Demandez les formats et la disponibilité",
       lead: "Nous discutons directement avec vous des formats, des quantités et des délais de livraison.",
+      ctaPrimary: "Appeler maintenant",
+      ctaSecondary: "Envoyer une demande",
+    },
+  },
+  breadPage: {
+    hero: {
+      eyebrow: "Deuxième ligne de produits",
+      heading: "Tabuny",
+      lead: "Pain plat traditionnel, fourni au carton aux restaurants, snacks à emporter et revendeurs en Suisse.",
+      imageAlt: "Pain plat fraîchement cuit sur une grille",
+    },
+    story: {
+      eyebrow: "Origine",
+      heading: "Produit dans notre propre boulangerie",
+      text: "Tabuny, c'est plus que du pain : un savoir-faire façonné par le temps, les meilleurs ingrédients et le respect de la tradition. Comme nos ancêtres, nous le cuisons de façon classique, au feu de bois dans un four en terre cuite, dans notre propre boulangerie à Ganterschwil. Via TAULA, nous le proposons également, en complément de notre gamme de légumes, aux entreprises de restauration et de commerce qui ont besoin de quantités plus importantes de manière régulière.",
+    },
+    philosophy: {
+      eyebrow: "Nos principes",
+      heading: "Philosophie & qualité",
+      items: [
+        {
+          title: "Aucun compromis sur les ingrédients",
+          text: "Nous utilisons exclusivement des matières premières de haute qualité, dont nous connaissons précisément l'origine.",
+        },
+        {
+          title: "Le temps, un ingrédient à part entière",
+          text: "Une bonne pâte a besoin de repos — nous lui laissons le temps de développer tout son arôme.",
+        },
+        {
+          title: "Durabilité",
+          text: "Du choix de nos partenaires à notre logistique, nous agissons de manière responsable.",
+        },
+        {
+          title: "La tradition rencontre la modernité",
+          text: "Des techniques de boulangerie séculaires combinées à des normes modernes pour une saveur authentique.",
+        },
+        {
+          title: "Fiabilité",
+          text: "Ponctualité et esprit de partenariat — à chaque livraison.",
+        },
+      ] as FeatureItem[],
+    },
+    promise: {
+      eyebrow: "Notre promesse",
+      heading: "Chaque pain qui quitte notre boulangerie est le fruit de la passion, de la patience et du souci du détail.",
+      lead: "Nous sommes fiers de faire partie de votre moment de plaisir.",
+      cta: "Nous contacter",
+    },
+    benefits: [
+      {
+        title: "Recette traditionnelle",
+        text: "Pain plat classique, cuit selon une tradition ancestrale.",
+      },
+      {
+        title: "Conditionné pour les professionnels",
+        text: "Livré au carton contenant plusieurs paquets, pratique pour la cuisine ou le comptoir.",
+      },
+      {
+        title: "Suivi personnalisé",
+        text: "Nous discutons directement avec vous de la quantité, de la date de livraison et des conditions de paiement.",
+      },
+    ] as FeatureItem[],
+    orderCard: {
+      heading: "Demande de carton",
+      unitLabel: "1 carton = 24 paquets",
+      cartonsLabel: "Nombre de cartons",
+      noteLabel: "Remarque (facultatif)",
+      notePlaceholder: "p. ex. date de livraison souhaitée",
+      submitCta: "Envoyer la demande",
+      helperText: "Cette demande est sans engagement. Nous vous contacterons personnellement pour confirmer la quantité, le délai et les conditions.",
+    },
+    contactCta: {
+      eyebrow: "Intéressé ?",
+      heading: "Parlons de vos besoins",
+      lead: "Appelez-nous ou envoyez-nous une demande — nous vous répondrons personnellement.",
       ctaPrimary: "Appeler maintenant",
       ctaSecondary: "Envoyer une demande",
     },
@@ -241,6 +323,7 @@ const fr: Dictionary = {
     phoneLabel: "Téléphone",
     emailLabel: "E-mail",
     addressLabel: "Adresse",
+    followUsHeading: "Suivez-nous",
     form: {
       heading: "Envoyer un message",
       name: "Nom",
@@ -248,8 +331,10 @@ const fr: Dictionary = {
       email: "E-mail",
       phone: "Téléphone",
       interest: "Intérêt",
+      interestHelp: "Sélectionnez le produit pour lequel vous souhaitez des informations — nous vous répondrons avec les détails correspondants.",
       message: "Message",
       interestGeneral: "Demande générale",
+      interestBread: "Tabuny",
       submit: "Envoyer le message",
       submitting: "Envoi en cours…",
       successTitle: "Merci pour votre message",

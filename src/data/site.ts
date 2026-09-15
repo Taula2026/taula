@@ -10,12 +10,19 @@ export const site = {
     city: "Winterthur",
     country: "Schweiz",
   },
-  uid: "CHE-XXX.XXX.XXX",
+  uid: "CHE-390.832.252",
   originCountry: "Ägypten",
+  // Not live yet — user will send real profile URLs once the accounts exist.
+  // Icons render regardless so the footer/contact layout is ready to go.
+  social: {
+    instagram: "",
+    facebook: "",
+    tiktok: "",
+  },
   placeholders: {
     phone: false,
     address: false,
-    uid: true,
+    uid: false,
   },
 } as const;
 
