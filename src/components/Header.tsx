@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { path, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dict";
@@ -17,6 +17,17 @@ interface HeaderProps {
 export function Header({ locale, dict }: HeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const navItems = [
     { href: path(locale, "home"), label: dict.nav.home },
@@ -72,8 +83,11 @@ export function Header({ locale, dict }: HeaderProps) {
       </div>
 
       {open ? (
-        <div id="mobile-menu" className="border-t border-navy/10 bg-white lg:hidden">
-          <nav className="shell flex flex-col gap-1 py-4" aria-label={dict.common.menu}>
+        <div
+          id="mobile-menu"
+          className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto border-t border-navy/10 bg-white lg:hidden"
+        >
+          <nav className="shell flex flex-col gap-1 py-6" aria-label={dict.common.menu}>
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -91,7 +105,7 @@ export function Header({ locale, dict }: HeaderProps) {
               );
             })}
             <div className="mt-3 flex items-center gap-3 px-3">
-              <LanguageSwitcher locale={locale} label={dict.languageSwitcherLabel} />
+              <LanguageSwitcher locale={locale} label={dict.languageSwitcherLabel} align="left" />
             </div>
             <Link
               href={path(locale, "contact")}

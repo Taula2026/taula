@@ -8,6 +8,7 @@ import { locales, type Locale } from "@/i18n/config";
 interface LanguageSwitcherProps {
   locale: Locale;
   label: string;
+  align?: "left" | "right";
 }
 
 function swapLocale(pathname: string, nextLocale: Locale): string {
@@ -17,7 +18,7 @@ function swapLocale(pathname: string, nextLocale: Locale): string {
   return segments.join("/") || `/${nextLocale}`;
 }
 
-export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ locale, label, align = "right" }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -68,7 +69,9 @@ export function LanguageSwitcher({ locale, label }: LanguageSwitcherProps) {
         <ul
           role="listbox"
           aria-label={label}
-          className="absolute right-0 top-full z-50 mt-2 w-32 overflow-hidden rounded-xl border border-navy/10 bg-white py-1 shadow-lg"
+          className={`absolute top-full z-50 mt-2 w-32 overflow-hidden rounded-xl border border-navy/10 bg-white py-1 shadow-lg ${
+            align === "left" ? "left-0" : "right-0"
+          }`}
         >
           {locales.map((item) => (
             <li key={item}>
