@@ -54,7 +54,7 @@ export function Header({ locale, dict }: HeaderProps) {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-sm font-medium transition-colors hover:text-leaf ${
+                className={`text-base font-medium transition-colors hover:text-leaf ${
                   isActive ? "text-leaf" : "text-navy-deep"
                 }`}
               >
@@ -66,7 +66,7 @@ export function Header({ locale, dict }: HeaderProps) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher locale={locale} label={dict.languageSwitcherLabel} />
-          <Link href={path(locale, "contact")} className="btn-primary">
+          <Link href={path(locale, "contact")} className="btn-primary text-base">
             {dict.nav.ctaContact}
           </Link>
         </div>
@@ -98,7 +98,7 @@ export function Header({ locale, dict }: HeaderProps) {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium ${
+                className={`rounded-lg px-3 py-2 text-base font-medium ${
                   isActive ? "bg-bone text-leaf" : "text-navy-deep"
                 }`}
               >
@@ -112,7 +112,7 @@ export function Header({ locale, dict }: HeaderProps) {
           <Link
             href={path(locale, "contact")}
             onClick={() => setOpen(false)}
-            className="btn-primary mx-3 mt-3 justify-center"
+            className="btn-primary mx-3 mt-3 justify-center text-base"
           >
             {dict.nav.ctaContact}
           </Link>

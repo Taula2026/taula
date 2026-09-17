@@ -59,7 +59,7 @@ export function LanguageSwitcher({ locale, label, align = "right" }: LanguageSwi
         aria-expanded={open}
         aria-label={label}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-11 items-center gap-2 rounded-full border border-navy/20 bg-white px-4 text-sm font-semibold text-navy-deep transition-colors hover:border-navy"
+        className="flex h-11 items-center gap-2 rounded-full border border-navy/20 bg-white px-4 text-base font-semibold text-navy-deep transition-colors hover:border-navy"
       >
         {locale.toUpperCase()}
         <ChevronDown size={16} className={`transition-transform ${open ? "rotate-180" : ""}`} />
@@ -80,7 +80,7 @@ export function LanguageSwitcher({ locale, label, align = "right" }: LanguageSwi
                 role="option"
                 aria-selected={item === locale}
                 onClick={() => handleSelect(item)}
-                className={`block w-full px-4 py-2 text-left text-sm font-medium transition-colors hover:bg-bone ${
+                className={`block w-full px-4 py-2 text-left text-base font-medium transition-colors hover:bg-bone ${
                   item === locale ? "text-leaf" : "text-navy-deep"
                 }`}
               >

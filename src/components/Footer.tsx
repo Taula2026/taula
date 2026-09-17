@@ -39,8 +39,8 @@ export function Footer({ locale, dict }: FooterProps) {
             height={56}
             className="mb-4 rounded-full"
           />
-          <p className="max-w-xs text-sm">{dict.footer.tagline}</p>
-          <p className="mt-4 text-sm font-medium text-ice">{dict.footer.originLine}</p>
+          <p className="max-w-xs text-base">{dict.footer.tagline}</p>
+          <p className="mt-4 text-base font-medium text-ice">{dict.footer.originLine}</p>
 
           <div className="mt-5 flex items-center gap-3">
             {socialLinks.map(({ name, href, Icon }) => (
@@ -59,10 +59,10 @@ export function Footer({ locale, dict }: FooterProps) {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             {dict.footer.navHeading}
           </h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2 text-base">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-white">
@@ -74,10 +74,10 @@ export function Footer({ locale, dict }: FooterProps) {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             {dict.footer.contactHeading}
           </h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2 text-base">
             <li>
               <a href={site.phoneHref} className="hover:text-white">
                 {site.phone}
@@ -90,10 +90,10 @@ export function Footer({ locale, dict }: FooterProps) {
             </li>
           </ul>
 
-          <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="mt-6 text-base font-semibold uppercase tracking-wide text-white">
             {dict.footer.addressHeading}
           </h3>
-          <p className="mt-4 text-sm">
+          <p className="mt-4 text-base">
             {site.address.street}
             <br />
             {site.address.zip} {site.address.city}
@@ -103,10 +103,10 @@ export function Footer({ locale, dict }: FooterProps) {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="text-base font-semibold uppercase tracking-wide text-white">
             {dict.footer.legalHeading}
           </h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2 text-base">
             <li>
               <Link href={path(locale, "imprint")} className="hover:text-white">
                 {dict.footer.imprintLink}
@@ -117,7 +117,7 @@ export function Footer({ locale, dict }: FooterProps) {
       </div>
 
       <div className="border-t border-white/10 py-6">
-        <p className="shell text-xs text-white/60">
+        <p className="shell text-sm text-white/60">
           &copy; {new Date().getFullYear()} {site.legalName} — {dict.footer.rights}
         </p>
       </div>
