@@ -7,6 +7,7 @@ import { getDictionary } from "@/i18n/dict";
 import { products } from "@/data/products";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
+import { Reveal } from "@/components/Reveal";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -67,35 +68,42 @@ export default async function ProductsPage({ params }: PageProps) {
 
       <section className="bg-bone py-16">
         <div className="shell grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard
+          {products.map((product, index) => (
+            <Reveal
               key={product.slug}
-              product={product}
-              copy={dict.products[product.slug]}
-              formatsOnRequestLabel={dict.common.formatsOnRequest}
-              detailsCtaLabel={dict.common.detailsCta}
-              closeLabel={dict.common.close}
-            />
-          ))}
-          <Link href={path(locale, "bread")} className="card flex flex-col overflow-hidden p-0">
-            <div className="relative aspect-[4/3] w-full bg-bone">
-              <Image
-                src="/images/prod-bread.jpg"
-                alt={dict.breadPage.hero.imageAlt}
-                fill
-                sizes="(min-width: 768px) 400px, 100vw"
-                className="object-cover"
+              delay={Math.min(index * 60, 360)}
+              className={product.featured ? "sm:col-span-2" : ""}
+            >
+              <ProductCard
+                product={product}
+                copy={dict.products[product.slug]}
+                formatsOnRequestLabel={dict.common.formatsOnRequest}
+                detailsCtaLabel={dict.common.detailsCta}
+                closeLabel={dict.common.close}
               />
-            </div>
-            <div className="flex flex-1 flex-col gap-3 p-6">
-              <h3 className="text-xl font-bold text-navy-deep">{dict.productsPage.breadTeaser.heading}</h3>
-              <p className="flex-1 text-sm text-navy-deep/70">{dict.productsPage.breadTeaser.text}</p>
-              <span className="btn-ghost mt-2 inline-flex w-fit items-center gap-2">
-                {dict.productsPage.breadTeaser.cta}
-                <ArrowRight size={16} aria-hidden="true" />
-              </span>
-            </div>
-          </Link>
+            </Reveal>
+          ))}
+          <Reveal delay={Math.min(products.length * 60, 360)}>
+            <Link href={path(locale, "bread")} className="card flex flex-col overflow-hidden p-0">
+              <div className="relative aspect-[4/3] w-full bg-bone">
+                <Image
+                  src="/images/prod-bread.jpg"
+                  alt={dict.breadPage.hero.imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 400px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-6">
+                <h3 className="text-xl font-bold text-navy-deep">{dict.productsPage.breadTeaser.heading}</h3>
+                <p className="flex-1 text-sm text-navy-deep/70">{dict.productsPage.breadTeaser.text}</p>
+                <span className="btn-ghost mt-2 inline-flex w-fit items-center gap-2">
+                  {dict.productsPage.breadTeaser.cta}
+                  <ArrowRight size={16} aria-hidden="true" />
+                </span>
+              </div>
+            </Link>
+          </Reveal>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { defaultLocale, isLocale, buildLanguageAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dict";
 import { site } from "@/data/site";
+import { Rule } from "@/components/Rule";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -27,7 +28,7 @@ export default async function ImprintPage({ params }: PageProps) {
       <div className="shell max-w-2xl">
         <span className="eyebrow">{dict.imprintPage.heading}</span>
         <h1 className="mt-3 text-3xl font-bold text-navy-deep sm:text-4xl">{dict.imprintPage.heading}</h1>
-        <span className="rule mt-4" />
+        <Rule className="mt-4" />
 
         <dl className="mt-10 space-y-8">
           <div>

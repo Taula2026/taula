@@ -32,7 +32,7 @@ export function ProductCard({
 
   return (
     <>
-      <div className={`card flex flex-col overflow-hidden p-0 ${isFeatured ? "sm:col-span-2" : ""}`}>
+      <div className="card flex h-full flex-col overflow-hidden p-0">
         <div className={`relative w-full bg-bone ${isFeatured ? "aspect-[21/9]" : "aspect-[4/3]"}`}>
           <Image
             src={isFeatured && product.imageWide ? product.imageWide : product.image}

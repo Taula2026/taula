@@ -7,6 +7,8 @@ import { getDictionary } from "@/i18n/dict";
 import { products, type Product } from "@/data/products";
 import { site } from "@/data/site";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
+import { Rule } from "@/components/Rule";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -46,7 +48,7 @@ export default async function HomePage({ params }: PageProps) {
               {dict.home.hero.headingLine1}
               <span className="block text-leaf">{dict.home.hero.headingLine2}</span>
             </h1>
-            <span className="rule mt-5" />
+            <Rule className="mt-5" />
             <p className="mt-6 max-w-lg text-lg text-navy-deep/70">{dict.home.hero.lead}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href={path(locale, "contact")} className="btn-primary">
@@ -127,13 +129,18 @@ export default async function HomePage({ params }: PageProps) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {products.map((product) => (
-              <ProductTeaserTile
+            {products.map((product, index) => (
+              <Reveal
                 key={product.slug}
-                product={product}
-                name={dict.products[product.slug].name}
-                href={path(locale, "products")}
-              />
+                delay={Math.min(index * 60, 360)}
+                className={product.featured ? "sm:col-span-2" : ""}
+              >
+                <ProductTeaserTile
+                  product={product}
+                  name={dict.products[product.slug].name}
+                  href={path(locale, "products")}
+                />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -173,8 +180,8 @@ function ProductTeaserTile({
   return (
     <Link
       href={href}
-      className={`group relative block overflow-hidden rounded-2xl bg-bone ${
-        product.featured ? "aspect-[21/9] sm:col-span-2" : "aspect-[4/3]"
+      className={`group relative block overflow-hidden rounded-2xl bg-bone shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg ${
+        product.featured ? "aspect-[21/9]" : "aspect-[4/3]"
       }`}
     >
       <Image
@@ -182,9 +189,9 @@ function ProductTeaserTile({
         alt={name}
         fill
         sizes="(min-width: 640px) 300px, 50vw"
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/10 to-transparent transition-opacity duration-300 group-hover:from-navy-deep/80" />
       <span className="absolute bottom-4 left-4 text-lg font-bold text-white">{name}</span>
     </Link>
   );

@@ -5,6 +5,7 @@ import { CheckCircle2, Wheat, Clock, Sprout, Landmark, Heart, ArrowRight } from 
 import { defaultLocale, isLocale, path, buildLanguageAlternates, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dict";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Rule } from "@/components/Rule";
 import { BreadOrderCard } from "@/components/BreadOrderCard";
 import { site } from "@/data/site";
 
@@ -72,7 +73,7 @@ export default async function BreadPage({ params }: PageProps) {
             <h2 className="mt-3 text-2xl font-bold text-navy-deep sm:text-3xl">
               {dict.breadPage.story.heading}
             </h2>
-            <span className="rule mt-4" />
+            <Rule className="mt-4" />
             <p className="mt-4 text-navy-deep/70">{dict.breadPage.story.text}</p>
           </div>
         </div>
