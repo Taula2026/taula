@@ -69,7 +69,7 @@ const en: Dictionary = {
     },
     productsTeaser: {
       eyebrow: "Range",
-      heading: "Seven vegetables, one point of contact",
+      heading: "Our vegetables, one point of contact",
       lead: "From molokhia to green beans — our range covers the kitchen classics and more.",
       ctaLabel: "View all products",
     },
@@ -107,7 +107,7 @@ const en: Dictionary = {
       },
       {
         title: "Broad range",
-        text: "Seven vegetable varieties cover the everyday needs of kitchens and trade.",
+        text: "Our vegetable varieties cover the everyday needs of kitchens and trade.",
       },
       {
         title: "Flexible quantities",
@@ -161,7 +161,7 @@ const en: Dictionary = {
     hero: {
       eyebrow: "Products",
       heading: "Frozen vegetables for kitchens and trade",
-      lead: "Seven varieties grown in Egypt, flash-frozen and ready for your kitchen or your range.",
+      lead: "Our varieties grown in Egypt, flash-frozen and ready for your kitchen or your range.",
       imageAlt: "A selection of frozen vegetables from the range",
       badges: ["100% vegetables", "No additives", "Flash-frozen immediately", "Origin: Egypt"],
     },
@@ -389,6 +389,16 @@ const en: Dictionary = {
       name: "Green beans",
       short: "Whole green beans, frozen.",
       long: "Our green beans are harvested at the optimal stage of ripeness and flash-frozen right afterwards to preserve bite and colour. Versatile as a side dish or in stews. Formats on request.",
+    },
+    whiteBeans: {
+      name: "White beans",
+      short: "Carefully selected frozen white beans, flavourful and ready to use.",
+      long: "Carefully selected frozen white beans, flavourful and ready to use. Flash-frozen right after harvest to preserve texture and taste. Versatile in stews, soups and as a side. Formats on request.",
+    },
+    redBeans: {
+      name: "Red beans",
+      short: "Carefully selected frozen red beans, flavourful and ready to use.",
+      long: "Carefully selected frozen red beans, flavourful and ready to use. Flash-frozen right after harvest to preserve texture and taste. Versatile in stews, chili and as a side. Formats on request.",
     },
   },
 };

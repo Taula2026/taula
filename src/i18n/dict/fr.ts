@@ -69,7 +69,7 @@ const fr: Dictionary = {
     },
     productsTeaser: {
       eyebrow: "Assortiment",
-      heading: "Sept légumes, un seul interlocuteur",
+      heading: "Nos légumes, un seul interlocuteur",
       lead: "De la molokhia aux haricots verts — notre assortiment couvre les classiques de la cuisine et bien plus encore.",
       ctaLabel: "Voir tous les produits",
     },
@@ -107,7 +107,7 @@ const fr: Dictionary = {
       },
       {
         title: "Large assortiment",
-        text: "Sept variétés de légumes couvrent les besoins courants des cuisines et du commerce.",
+        text: "Nos variétés de légumes couvrent les besoins courants des cuisines et du commerce.",
       },
       {
         title: "Quantités flexibles",
@@ -161,7 +161,7 @@ const fr: Dictionary = {
     hero: {
       eyebrow: "Produits",
       heading: "Des légumes surgelés pour la cuisine et le commerce",
-      lead: "Sept variétés cultivées en Égypte, surgelées rapidement et prêtes pour votre cuisine ou votre assortiment.",
+      lead: "Nos variétés cultivées en Égypte, surgelées rapidement et prêtes pour votre cuisine ou votre assortiment.",
       imageAlt: "Une sélection de légumes surgelés de l'assortiment",
       badges: ["100 % légumes", "Sans additifs", "Surgelé immédiatement", "Origine : Égypte"],
     },
@@ -389,6 +389,16 @@ const fr: Dictionary = {
       name: "Haricots verts",
       short: "Haricots verts entiers, surgelés.",
       long: "Nos haricots verts sont récoltés au stade de maturité optimal puis surgelés rapidement pour préserver croquant et couleur. Polyvalents en accompagnement ou dans des ragoûts. Formats sur demande.",
+    },
+    whiteBeans: {
+      name: "Haricots blancs",
+      short: "Haricots blancs surgelés soigneusement sélectionnés, savoureux et prêts à l'emploi.",
+      long: "Haricots blancs surgelés soigneusement sélectionnés, savoureux et prêts à l'emploi. Surgelés juste après la récolte pour préserver texture et goût. Polyvalents dans les ragoûts, les soupes et en accompagnement. Formats sur demande.",
+    },
+    redBeans: {
+      name: "Haricots rouges",
+      short: "Haricots rouges surgelés soigneusement sélectionnés, savoureux et prêts à l'emploi.",
+      long: "Haricots rouges surgelés soigneusement sélectionnés, savoureux et prêts à l'emploi. Surgelés juste après la récolte pour préserver texture et goût. Polyvalents dans les ragoûts, le chili et en accompagnement. Formats sur demande.",
     },
   },
 };

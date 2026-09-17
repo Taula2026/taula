@@ -6,6 +6,8 @@ export const PRODUCT_SLUGS = [
   "mixed",
   "spinach",
   "beans",
+  "whiteBeans",
+  "redBeans",
 ] as const;
 
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
@@ -29,6 +31,8 @@ export const products: Product[] = [
   { slug: "mixed", featured: false, image: "/images/prod-mixed-vegetables.png" },
   { slug: "spinach", featured: false, image: "/images/prod-spinach.png" },
   { slug: "beans", featured: false, image: "/images/prod-green-beans.png" },
+  { slug: "whiteBeans", featured: false, image: "/images/prod-white-beans.png" },
+  { slug: "redBeans", featured: false, image: "/images/prod-red-beans.png" },
 ];
 
 export function getProduct(slug: ProductSlug): Product {

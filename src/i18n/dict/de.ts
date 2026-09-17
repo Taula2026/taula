@@ -90,7 +90,7 @@ const de = {
     },
     productsTeaser: {
       eyebrow: "Sortiment",
-      heading: "Sieben Gemüse, ein Ansprechpartner",
+      heading: "Unser Gemüse, ein Ansprechpartner",
       lead: "Von Molokhia bis Bohnen — unser Sortiment deckt die Klassiker der Küche und darüber hinaus ab.",
       ctaLabel: "Alle Produkte ansehen",
     },
@@ -128,7 +128,7 @@ const de = {
       },
       {
         title: "Breites Sortiment",
-        text: "Sieben Gemüsesorten decken die gängigen Bedürfnisse von Küche und Handel ab.",
+        text: "Unsere Gemüsesorten decken die gängigen Bedürfnisse von Küche und Handel ab.",
       },
       {
         title: "Flexible Mengen",
@@ -182,7 +182,7 @@ const de = {
     hero: {
       eyebrow: "Produkte",
       heading: "Tiefkühlgemüse für Küche und Handel",
-      lead: "Sieben Sorten aus ägyptischem Anbau, schockgefroren und bereit für Ihre Küche oder Ihr Sortiment.",
+      lead: "Unsere Sorten aus ägyptischem Anbau, schockgefroren und bereit für Ihre Küche oder Ihr Sortiment.",
       imageAlt: "Verschiedene tiefgefrorene Gemüsesorten aus dem Sortiment",
       badges: [
         "100 % Gemüse",
@@ -415,6 +415,16 @@ const de = {
       name: "Bohnen",
       short: "Grüne Bohnen, ganz und tiefgefroren.",
       long: "Unsere grünen Bohnen werden im optimalen Reifezustand geerntet und direkt danach schockgefroren, um Biss und Farbe zu bewahren. Vielseitig einsetzbar als Beilage oder in Eintöpfen. Formate auf Anfrage.",
+    },
+    whiteBeans: {
+      name: "Weisse Bohnen",
+      short: "Sorgfältig ausgewählte, tiefgefrorene weisse Bohnen, aromatisch und verzehrfertig.",
+      long: "Sorgfältig ausgewählte, tiefgefrorene weisse Bohnen, aromatisch und verzehrfertig. Direkt nach der Ernte schockgefroren, um Textur und Geschmack zu bewahren. Vielseitig einsetzbar in Eintöpfen, Suppen und als Beilage. Formate auf Anfrage.",
+    },
+    redBeans: {
+      name: "Rote Bohnen",
+      short: "Sorgfältig ausgewählte, tiefgefrorene rote Bohnen, aromatisch und verzehrfertig.",
+      long: "Sorgfältig ausgewählte, tiefgefrorene rote Bohnen, aromatisch und verzehrfertig. Direkt nach der Ernte schockgefroren, um Textur und Geschmack zu bewahren. Vielseitig einsetzbar in Eintöpfen, Chili und als Beilage. Formate auf Anfrage.",
     },
   } as Record<ProductSlug, ProductCopy>,
 };

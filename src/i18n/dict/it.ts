@@ -69,7 +69,7 @@ const it: Dictionary = {
     },
     productsTeaser: {
       eyebrow: "Assortimento",
-      heading: "Sette verdure, un solo interlocutore",
+      heading: "Le nostre verdure, un solo interlocutore",
       lead: "Dalla molokhia ai fagiolini — il nostro assortimento copre i classici della cucina e non solo.",
       ctaLabel: "Vedi tutti i prodotti",
     },
@@ -107,7 +107,7 @@ const it: Dictionary = {
       },
       {
         title: "Assortimento ampio",
-        text: "Sette varietà di verdure coprono le esigenze quotidiane di cucine e commercio.",
+        text: "Le nostre varietà di verdure coprono le esigenze quotidiane di cucine e commercio.",
       },
       {
         title: "Quantità flessibili",
@@ -161,7 +161,7 @@ const it: Dictionary = {
     hero: {
       eyebrow: "Prodotti",
       heading: "Verdure surgelate per cucina e commercio",
-      lead: "Sette varietà coltivate in Egitto, surgelate rapidamente e pronte per la vostra cucina o il vostro assortimento.",
+      lead: "Le nostre varietà coltivate in Egitto, surgelate rapidamente e pronte per la vostra cucina o il vostro assortimento.",
       imageAlt: "Una selezione di verdure surgelate dell'assortimento",
       badges: ["100% verdura", "Senza additivi", "Surgelato immediatamente", "Origine: Egitto"],
     },
@@ -389,6 +389,16 @@ const it: Dictionary = {
       name: "Fagiolini",
       short: "Fagiolini interi, surgelati.",
       long: "I nostri fagiolini vengono raccolti nel momento di maturazione ottimale e surgelati rapidamente subito dopo, per preservarne croccantezza e colore. Versatili come contorno o in umidi. Formati su richiesta.",
+    },
+    whiteBeans: {
+      name: "Fagioli bianchi",
+      short: "Fagioli bianchi surgelati accuratamente selezionati, saporiti e pronti all'uso.",
+      long: "Fagioli bianchi surgelati accuratamente selezionati, saporiti e pronti all'uso. Surgelati subito dopo la raccolta per preservarne consistenza e sapore. Versatili in stufati, zuppe e come contorno. Formati su richiesta.",
+    },
+    redBeans: {
+      name: "Fagioli rossi",
+      short: "Fagioli rossi surgelati accuratamente selezionati, saporiti e pronti all'uso.",
+      long: "Fagioli rossi surgelati accuratamente selezionati, saporiti e pronti all'uso. Surgelati subito dopo la raccolta per preservarne consistenza e sapore. Versatili in stufati, chili e come contorno. Formati su richiesta.",
     },
   },
 };
